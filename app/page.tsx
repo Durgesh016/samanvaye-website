@@ -8,13 +8,12 @@ import { ConstellationLink, Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
 import { Programmes } from "@/components/sections/Programmes";
 import { Volunteer } from "@/components/sections/Volunteer";
-import { pageMeta } from "@/lib/seo";
+import { SITE_DESCRIPTION, pageMeta } from "@/lib/seo";
 
-/* The search result for the homepage says what the foundation is and where (from the About us wording). */
+/* The search result for the homepage says what the foundation is and where: Samanvaye, NGO, Rajahmundry. */
 export const metadata = pageMeta({
   title: "Samanvaye Foundation | NGO in Rajahmundry, Andhra Pradesh",
-  description:
-    "Since 2019, Samanvaye Foundation has walked alongside more than 2,000 families in Rajahmundry, Andhra Pradesh, with healthcare, education and elder care.",
+  description: SITE_DESCRIPTION,
   path: "/",
 });
 

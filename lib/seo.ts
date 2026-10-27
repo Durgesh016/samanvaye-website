@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { content } from "@/lib/content";
 import { images } from "@/lib/images";
-import { about } from "@/lib/site/data";
 import { photoUrl, type SitePic } from "@/lib/site/photo";
 
 /**
@@ -11,6 +10,16 @@ import { photoUrl, type SitePic } from "@/lib/site/photo";
 export const SITE_URL = (process.env.SITE_URL ?? "https://samanvaye.org").replace(/\/$/, "");
 export const SITE_NAME = "Samanvaye Foundation";
 export const TITLE_SUFFIX = ` | ${SITE_NAME}`;
+
+/**
+ * Who the foundation is, in the words people search with ("samanvaye ngo", "samanvaye rajahmundry"): the homepage's
+ * search-result text and the description in the structured data. The facts are from the About us page.
+ */
+export const SITE_DESCRIPTION =
+  "Samanvaye Foundation is a registered NGO in Rajahmundry (Rajamahendravaram), Andhra Pradesh, serving 2,000+ families with healthcare, education and elder care.";
+
+/** Other names the foundation goes by; Google uses them to match searches for those names to this site. */
+const ALT_NAMES = ["Samanvaye", "Samanvaye NGO"];
 
 /**
  * Link previews (WhatsApp, Facebook, X) show the page's photo as a 1200×630 JPEG made by app/og/[...path]/route.ts,
@@ -81,9 +90,10 @@ export function siteJsonLd() {
     "@graph": [
       {
         ...ORG,
+        alternateName: ALT_NAMES,
         logo: absolute("/images/mark.png"),
         image: absolute(images.hero1.src),
-        description: about.hero.sub,
+        description: SITE_DESCRIPTION,
         email: footer.email,
         telephone: footer.phones.map((p) => p.label),
         /* the footer address, split into its parts */
@@ -95,9 +105,19 @@ export function siteJsonLd() {
           postalCode: "533101",
           addressCountry: "IN",
         },
+        /* the city was officially renamed Rajamahendravaram in 2015; people search with both names */
+        areaServed: { "@type": "City", name: "Rajahmundry", alternateName: "Rajamahendravaram" },
         sameAs: [...new Set(topbar.social.map((s) => s.href))],
       },
-      { "@type": "WebSite", "@id": `${SITE_URL}/#website`, url: SITE_URL, name: SITE_NAME, inLanguage: "en", publisher: { "@id": ORG["@id"] } },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: SITE_NAME,
+        alternateName: ALT_NAMES,
+        inLanguage: "en",
+        publisher: { "@id": ORG["@id"] },
+      },
     ],
   };
 }
