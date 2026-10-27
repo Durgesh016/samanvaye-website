@@ -41,14 +41,15 @@ If you are offline, the run simply carries on; any photo not yet copied is shown
 next `npm run dev` tries again. You can also run it yourself: `npm run photos` (or `node scripts/fetch-photos.mjs --check`
 to list what is missing).
 
-Production build:
+Production build (a static site: `output: "export"` in `next.config.ts`):
 
 ```bash
 npm run build
-npm start
 ```
 
-It deploys as-is to Vercel or any host that runs Node.js (the build copies the photos first).
+The build copies the photos first, then writes the whole site as plain files to **`out/`**. Upload the contents of
+`out/` to any web host; no Node.js is needed. (`npm start` does not work with a static export; to look at the
+build locally, serve `out/` with any static file server.)
 
 ## Where things are
 
@@ -102,8 +103,9 @@ each blog post.
   New blog posts in `lib/site/data.ts` are added to the sitemap automatically. If the page uses a new preview
   photo, add it to `generateStaticParams` in `app/og/[...path]/route.ts` so it is made at build time.
 - **Old WordPress addresses:** pages and posts kept their addresses. The WordPress-only ones (tag and category
-  pages, `/home-2`, the donation-plugin pages, `/wp-sitemap.xml`, photos under `/wp-content/uploads/`) move
-  permanently to the closest page; the list is in `next.config.ts`.
+  pages, `/home-2`, the donation-plugin pages, `/wp-sitemap.xml`, photos under `/wp-content/uploads/`) should
+  move permanently (301) to the closest page. A static export cannot do this itself, so set these redirects up
+  on the web host.
 - **After going live:** in [Google Search Console](https://search.google.com/search-console), submit
   `https://samanvaye.org/sitemap.xml` (the WordPress site's sitemap was `/wp-sitemap.xml`).
 
@@ -128,5 +130,5 @@ placeholder address was replaced by the real bank details.
   "reduce motion" settings turn the movement off.
 - The homepage's 3D library (A-Frame, about 1.3 MB) loads after the page has finished loading, so it never holds
   up the text, photos or effects; visitors with Data Saver on, or on 2G, keep the still picture.
-- Photos are served at the size they are shown (Next.js image optimisation, WebP), and Google maps load only as
-  you scroll near them.
+- Photos are served as the files in `public/images` (a static export has no image optimiser), and Google maps
+  load only as you scroll near them.

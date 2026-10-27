@@ -3,6 +3,9 @@ import { gallery, posts } from "@/lib/site/data";
 import { photoUrl } from "@/lib/site/photo";
 import { SITE_URL, absolute } from "@/lib/seo";
 
+/* written to out/sitemap.xml at build time (static export) */
+export const dynamic = "force-static";
+
 /* Every page in app/. Add new pages here so search engines find them. */
 const PAGES = ["/", "/about-us", "/our-team", "/causes", "/vayo-vidhya", "/health-clinic", "/blogs", "/gallery", "/donation", "/contact-us"];
 

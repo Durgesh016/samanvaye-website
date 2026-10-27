@@ -1,0 +1,33 @@
+{
+  "hosting": {
+    "public": "out",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      { "source": "/home-2", "destination": "/", "type": 301 },
+      { "source": "/sample-page", "destination": "/", "type": 301 },
+      { "source": "/category/**", "destination": "/blogs", "type": 301 },
+      { "source": "/tag/**", "destination": "/blogs", "type": 301 },
+      { "source": "/author/**", "destination": "/blogs", "type": 301 },
+      { "source": "/feed", "destination": "/blogs", "type": 301 },
+      { "source": "/donations/**", "destination": "/donation", "type": 301 },
+      { "source": "/donation-confirmation", "destination": "/donation", "type": 301 },
+      { "source": "/donation-failed", "destination": "/donation", "type": 301 },
+      { "source": "/donor-dashboard", "destination": "/donation", "type": 301 },
+      { "source": "/metform-form/**", "destination": "/contact-us", "type": 301 },
+      { "source": "/wp-sitemap*.xml", "destination": "/sitemap.xml", "type": 301 },
+      { "source": "/wp-content/uploads/:path*", "destination": "/images/site/:path", "type": 301 }
+    ],
+    "headers": [
+      {
+        "source": "/_next/static/**",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|png|webp|svg|ico|woff2)",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+      }
+    ]
+  }
+}

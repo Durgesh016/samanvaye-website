@@ -1,0 +1,72 @@
+[debug] [2026-10-27T09:32:52.735Z] ----------------------------------------------------------------------
+[debug] [2026-10-27T09:32:52.800Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Durgesh\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only hosting --project demo-samanvaye
+[debug] [2026-10-27T09:32:52.801Z] CLI Version:   15.34.1
+[debug] [2026-10-27T09:32:52.801Z] Platform:      win32
+[debug] [2026-10-27T09:32:52.801Z] Node Version:  v24.18.0
+[debug] [2026-10-27T09:32:52.802Z] Detected Agent: claude-code_2-1-310_agent
+[debug] [2026-10-27T09:32:52.802Z] Time:          Tue Oct 27 2026 15:02:52 GMT+0530 (India Standard Time)
+[debug] [2026-10-27T09:32:52.802Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[info] i  emulators: Detected demo project ID "demo-samanvaye", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail. {"metadata":{"emulator":{"name":"hub"},"message":"Detected demo project ID \"demo-samanvaye\", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail."}}
+[debug] [2026-10-27T09:32:55.883Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-10-27T09:32:55.884Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-10-27T09:32:55.884Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-10-27T09:32:55.891Z] Write emulator hub locator at C:\Users\Durgesh\AppData\Local\Temp\hub-demo-samanvaye.json
+[debug] [2026-10-27T09:32:55.915Z] Checked if tokens are valid: false, expires at: 1793094467334
+[debug] [2026-10-27T09:32:55.916Z] Checked if tokens are valid: false, expires at: 1793094467334
+[debug] [2026-10-27T09:32:55.916Z] > refreshing access token with scopes: []
+[debug] [2026-10-27T09:32:55.919Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-10-27T09:32:55.919Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-10-27T09:32:56.168Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-10-27T09:32:56.168Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-10-27T09:32:56.178Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/demo-samanvaye [none]
+[debug] [2026-10-27T09:32:57.653Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/demo-samanvaye 403
+[debug] [2026-10-27T09:32:57.653Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/demo-samanvaye {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2026-10-27T09:32:57.654Z] Request to https://firebase.googleapis.com/v1beta1/projects/demo-samanvaye had HTTP Error: 403, The caller does not have permission
+[info] i  hosting[demo-samanvaye]: Serving hosting files from: out {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mout\u001b[22m"}}
+[info] +  hosting[demo-samanvaye]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[warn] !  emulators: The Emulator UI is not starting because none of the running emulators have a UI component. {"metadata":{"emulator":{"name":"hub"},"message":"The Emulator UI is not starting because none of the running emulators have a UI component."}}
+[debug] [2026-10-27T09:32:57.692Z] Could not find VSCode notification endpoint: TypeError: fetch failed. If you are not running the Firebase SQL Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+└─────────────────────────────────────────────────────────────┘
+
+┌──────────┬────────────────┐
+│ Emulator │ Host:Port      │
+├──────────┼────────────────┤
+│ Hosting  │ 127.0.0.1:5000 │
+└──────────┴────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:08 +0000] "GET / HTTP/1.1" 200 124292 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:08 +0000] \"GET / HTTP/1.1\" 200 124292 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:08 +0000] "GET /about-us HTTP/1.1" 200 68062 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:08 +0000] \"GET /about-us HTTP/1.1\" 200 68062 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] "GET /about-us/ HTTP/1.1" 301 - "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] \"GET /about-us/ HTTP/1.1\" 301 - \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] "GET /about-us HTTP/1.1" 200 68062 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] \"GET /about-us HTTP/1.1\" 200 68062 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] "GET /gallery HTTP/1.1" 200 151166 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] \"GET /gallery HTTP/1.1\" 200 151166 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] "GET /social-welfare-programs/ HTTP/1.1" 301 - "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] \"GET /social-welfare-programs/ HTTP/1.1\" 301 - \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] "GET /social-welfare-programs HTTP/1.1" 200 63371 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] \"GET /social-welfare-programs HTTP/1.1\" 200 63371 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] "GET /og/hero1.jpg HTTP/1.1" 200 88426 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] \"GET /og/hero1.jpg HTTP/1.1\" 200 88426 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] "GET /sitemap.xml HTTP/1.1" 200 15539 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:09 +0000] \"GET /sitemap.xml HTTP/1.1\" 200 15539 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:10 +0000] "GET /robots.txt HTTP/1.1" 200 67 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:10 +0000] \"GET /robots.txt HTTP/1.1\" 200 67 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:10 +0000] "GET /favicon.ico HTTP/1.1" 200 5780 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:10 +0000] \"GET /favicon.ico HTTP/1.1\" 200 5780 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:10 +0000] "GET /no-such-page HTTP/1.1" 404 30650 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:10 +0000] \"GET /no-such-page HTTP/1.1\" 404 30650 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:10 +0000] "GET /tag/nri/ HTTP/1.1" 404 30650 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:10 +0000] \"GET /tag/nri/ HTTP/1.1\" 404 30650 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:11 +0000] "GET /home-2/ HTTP/1.1" 404 30650 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:11 +0000] \"GET /home-2/ HTTP/1.1\" 404 30650 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:11 +0000] "GET /donations/helping-for-poor/ HTTP/1.1" 404 30650 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:11 +0000] \"GET /donations/helping-for-poor/ HTTP/1.1\" 404 30650 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:11 +0000] "GET /metform-form/contact-form/ HTTP/1.1" 404 30650 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:11 +0000] \"GET /metform-form/contact-form/ HTTP/1.1\" 404 30650 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:11 +0000] "GET /wp-sitemap.xml HTTP/1.1" 404 30650 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:11 +0000] \"GET /wp-sitemap.xml HTTP/1.1\" 404 30650 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:11 +0000] "GET /wp-sitemap-posts-post-1.xml HTTP/1.1" 404 30650 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:11 +0000] \"GET /wp-sitemap-posts-post-1.xml HTTP/1.1\" 404 30650 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:12 +0000] "GET /feed/ HTTP/1.1" 404 30650 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:12 +0000] \"GET /feed/ HTTP/1.1\" 404 30650 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:12 +0000] "GET /wp-content/uploads/2026/05/20220109_134758-scaled-3.jpg HTTP/1.1" 404 30650 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:12 +0000] \"GET /wp-content/uploads/2026/05/20220109_134758-scaled-3.jpg HTTP/1.1\" 404 30650 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:12 +0000] "GET /?elementskit_template=footer HTTP/1.1" 200 124292 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:12 +0000] \"GET /?elementskit_template=footer HTTP/1.1\" 200 124292 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:13 +0000] "HEAD /_next/static/chunks/00y_affwfms1m.js HTTP/1.1" 200 1264704 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:13 +0000] \"HEAD /_next/static/chunks/00y_affwfms1m.js HTTP/1.1\" 200 1264704 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:13 +0000] "HEAD /images/hero1.jpg HTTP/1.1" 200 167158 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:13 +0000] \"HEAD /images/hero1.jpg HTTP/1.1\" 200 167158 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:13 +0000] "GET /no-such-page HTTP/1.1" 404 30650 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:13 +0000] \"GET /no-such-page HTTP/1.1\" 404 30650 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:23 +0000] "HEAD /home-2 HTTP/1.1" 404 30650 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:23 +0000] \"HEAD /home-2 HTTP/1.1\" 404 30650 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:24 +0000] "HEAD /feed HTTP/1.1" 404 30650 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:24 +0000] \"HEAD /feed HTTP/1.1\" 404 30650 \"-\" \"curl/8.21.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/Oct/2026:09:33:24 +0000] "HEAD /images/hero1.jpg HTTP/1.1" 200 167158 "-" "curl/8.21.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/Oct/2026:09:33:24 +0000] \"HEAD /images/hero1.jpg HTTP/1.1\" 200 167158 \"-\" \"curl/8.21.0\""}}

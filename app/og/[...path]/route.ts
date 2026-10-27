@@ -5,7 +5,10 @@ import { about, causes, clinic, contact, donation, gallery, posts, team, vayo } 
 
 const ROOT = path.join(process.cwd(), "public", "images");
 
-/* The photos the pages pass to pageMeta are made at build time; any other photo under public/images on first request. */
+/* Written to out/og/… at build time (static export): one file for each photo the pages pass to pageMeta. */
+export const dynamic = "force-static";
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   const files = [
     images.hero1.src.replace("/images/", ""),
